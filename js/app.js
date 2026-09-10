@@ -3,7 +3,8 @@
    ========================================================================== */
 const PROFILE = {
   name: "Anirban Maitra",
-  role: "Data Scientist / AI/ML Engineer",
+  role: "Data Scientist",
+  organization: "Turing Global India pvt. ltd.",
   location: "Raebareli, Uttar Pradesh, India",
   availability: "Open to full-time opportunities",
   email: "maitraanirban25@gmail.com",
@@ -67,21 +68,32 @@ const PROJECTS = [
     glyph: "bars",
   },
   {
-    title: "Generative AI Playground",
-    desc: "A growing collection of applied GenAI notebooks and experiments — agent orchestration, tool-calling, and retrieval patterns built with LangChain, LangGraph, and the Model Context Protocol.",
-    stack: ["LangChain", "LangGraph", "MCP", "LlamaIndex"],
-    repo: "https://github.com/MrBeast-Anirban/Generative-AI",
-    demo: null,
-    glyph: "spiral",
-  },
-  {
-    title: "Real-Time Data Analytics Platform",
-    desc: "A Hadoop-based platform for batch and real-time analysis of streaming Reddit data, built to classify high-volume text streams as they arrive.",
-    stack: ["Hadoop", "Python", "Streaming Data"],
+    title: "Hadoop-Based Platform for Batch and Real Time Reddit Data Analysis and Classification",
+    desc: "A Hadoop-based platform for batch and real-time analysis of streaming Reddit data, built to classify high-volume text streams as they arrive. Achieved accuracy score of 94.28% over disaster-related Reddit posts",
+    stack: ["Hadoop", "Python", "Apache PySpark", "Reddit Streaming API"],
     repo: "https://github.com/MrBeast-Anirban/Hadoop-Based-Platform-for-Batch-and-Real-Time-Data-Analysis-and-Classification",
     demo: null,
     glyph: "grid",
   },
+];
+
+const OLDPROJECTS = [
+  {
+    title: "Analog Clock Reader",
+    desc: "The Analog Clock Reader uses OpenCV to create a synthetic clock dataset with various distortions and trains a CNN model in PyTorch on both synthetic and real clock images. Capable of handling distortions, skew, and tilt, the model achieves a remarkable test accuracy of 99.31%.",
+    stack: ["Python", "CNN", "Computer Vision", "Pytorch"],
+    repo: "https://github.com/MrBeast-Anirban/Analog-Clock-Reader",
+    demo: null,
+    glyph: "clock",
+  },
+  {
+    title: "Visualizer",
+    desc: "The Sorting Algorithm Visualizer is a responsive web application built with HTML, CSS, and JavaScript. It provides an interactive interface for users to explore and understand various sorting algorithms such as Selection Sort, Bubble Sort, Insertion Sort, Merge Sort, Quick Sort, and Heap Sort.",
+    stack: ["HTML", "CSS", "JavaSctipt"],
+    repo: "https://github.com/MrBeast-Anirban/Visualizer",
+    demo: null,
+    glyph: "staircase",
+  }
 ];
 
 const SKILLS = [
@@ -103,7 +115,7 @@ const SKILLS = [
   },
   {
     title: "working with people",
-    items: ["Problem Solving", "Stakeholder Management", "Executive Communication", "Leadership"],
+    items: ["Problem Solving", "Analytical Thinking", "Communication", "Leadership", "Decision Making"],
   },
 ];
 
@@ -118,6 +130,33 @@ function previewSVG(glyph) {
   const bg = `<rect width="300" height="128" fill="#12181A"/>`;
 
   const glyphs = {
+    staircase: `
+      <path d="M40 100 L40 80 L80 80 L80 60 L120 60 L120 40 L160 40 L160 20 L200 20" fill="none" stroke="${accent}" stroke-width="1.6"/>
+      <path d="M40 100 L200 100" fill="none" stroke="${stroke}" stroke-width="1"/>
+      <circle cx="40" cy="100" r="2" fill="${accent2}"/>
+      <circle cx="80" cy="80" r="2" fill="${accent2}"/>
+      <circle cx="120" cy="60" r="2" fill="${accent2}"/>
+      <circle cx="160" cy="40" r="2" fill="${accent2}"/>
+      <circle cx="200" cy="20" r="2" fill="${accent2}"/>
+    `,
+    clock: `
+      <circle cx="150" cy="64" r="34" fill="none" stroke="${stroke}" stroke-width="1"/>
+      <circle cx="150" cy="64" r="2.5" fill="${accent}"/>
+      <!-- hour hand -->
+      <line x1="150" y1="64" x2="150" y2="43" stroke="${accent}" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- minute hand -->
+      <line x1="150" y1="64" x2="169" y2="72" stroke="${accent}" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- clock ticks -->
+      <line x1="150" y1="34" x2="150" y2="40" stroke="${accent2}" stroke-width="1"/>
+      <line x1="180" y1="64" x2="174" y2="64" stroke="${accent2}" stroke-width="1"/>
+      <line x1="150" y1="94" x2="150" y2="88" stroke="${accent2}" stroke-width="1"/>
+      <line x1="120" y1="64" x2="126" y2="64" stroke="${accent2}" stroke-width="1"/>
+      <!-- subtle outer pulse -->
+      <circle cx="150" cy="64" r="42" fill="none" stroke="${accent2}" stroke-width="1" opacity="0.35"/>`,
+    click: `
+      <circle cx="150" cy="64" r="28" fill="none" stroke="${stroke}" stroke-width="1"/>
+      <path d="M138 42 L138 78 L148 68 L158 88 L165 84 L155 64 L169 64 Z" fill="none" stroke="${accent}" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M120 32 L108 20 M180 32 L192 20 M150 18 L150 4" fill="none" stroke="${accent2}" stroke-width="1" opacity="0.6"/>`,
     waveform: `
       <line x1="0" y1="64" x2="300" y2="64" stroke="${stroke}" stroke-width="1"/>
       <path d="M0 64 L20 64 L30 40 L40 90 L50 20 L60 100 L70 64 L90 64 L100 48 L110 80 L120 64 L300 64"
@@ -171,6 +210,7 @@ function previewSVG(glyph) {
    ========================================================================== */
 function renderProjects() {
   const grid = document.getElementById("projectGrid");
+  const grid2 = document.getElementById("oldProjectGrid")
   grid.innerHTML = PROJECTS.map(p => `
     <article class="project-card">
       <div class="project-card__preview">${previewSVG(p.glyph)}</div>
@@ -183,6 +223,24 @@ function renderProjects() {
         <div class="project-card__links">
           <a href="${p.repo}" target="_blank" rel="noopener">source</a>
           ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener">live demo</a>` : ""}
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  /* for old projects */
+  grid2.innerHTML = OLDPROJECTS.map(p => `
+    <article class="old-project-card">
+      <div class="project-card__preview">${previewSVG(p.glyph)}</div>
+      <div class="old-project-card__body">
+        <h3 class="project-card__title">${p.title}</h3>
+        <div class="project-card__links">
+          <a href="${p.repo}" target="_blank" rel="noopener">source</a>
+          ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener">live demo</a>` : ""}
+        </div><br>
+        <p class="old-project-card__desc">${p.desc}</p>
+        <div class="project-card__stack">
+          ${p.stack.map(s => `<span class="tag">${s}</span>`).join("")}
         </div>
       </div>
     </article>
@@ -203,7 +261,7 @@ function typeHeadline() {
   const target = document.getElementById("typeTarget");
   const text = PROFILE.headline;
   let i = 0;
-  const speed = 24;
+  const speed = 30;
   function step() {
     if (i <= text.length) {
       target.textContent = text.slice(0, i);
@@ -279,18 +337,23 @@ const Terminal = (() => {
         { text: "  about        — who I am and how I work" },
         { text: "  experience   — work history" },
         { text: "  projects     — featured builds, with links" },
+        { text: "  oldprojects  — all old projects, with links" },
         { text: "  skills       — technical skill inventory" },
         { text: "  education    — degrees and scores" },
         { text: "  contact      — how to reach me" },
         { text: "  social       — GitHub, LinkedIn, X" },
-        { text: "  resume       — download résumé (PDF)" },
-        { text: "  gui          — switch to the GUI view" },
+        { text: "  resume       — download resume (PDF)" },
+        { text: "  exit         — switch to the GUI view" },
         { text: "  clear        — clear the screen" },
-        { text: "  whoami       — one-line summary" },
+        { text: "  whoami       — one line summary" },
       ]);
     },
     whoami() {
-      println(`${PROFILE.name} — ${PROFILE.role}, ${PROFILE.location}.`);
+      org_desc = ``
+      if (PROFILE.organization !== ""){
+        org_desc = ` at ${PROFILE.organization}`
+      }
+      println(`${PROFILE.name} is a ${PROFILE.role}${org_desc}, from ${PROFILE.location}.`);
     },
     about() {
       println("about.txt", "heading");
@@ -308,6 +371,16 @@ const Terminal = (() => {
     projects() {
       println("./projects", "heading");
       PROJECTS.forEach((p, i) => {
+        println(`[${i + 1}] ${p.title}`, "amber");
+        println(`    ${p.desc}`);
+        println(`    stack: ${p.stack.join(", ")}`, "muted");
+        println(`    repo:  <a href="${p.repo}" target="_blank" rel="noopener">${p.repo}</a>`, "cyan");
+        println("&nbsp;");
+      });
+    },
+    oldprojects() {
+      println("./oldprojects", "heading");
+      OLDPROJECTS.forEach((p, i) => {
         println(`[${i + 1}] ${p.title}`, "amber");
         println(`    ${p.desc}`);
         println(`    stack: ${p.stack.join(", ")}`, "muted");
@@ -340,15 +413,15 @@ const Terminal = (() => {
       println(`  x        : <a href="${PROFILE.twitter}" target="_blank" rel="noopener">${PROFILE.twitter}</a>`, "cyan");
     },
     resume() {
-      println(`opening résumé — if the download doesn't start, <a href="${PROFILE.resume}" target="_blank" rel="noopener">click here</a>.`, "cyan");
+      println(`opening resume — if the download doesn't start, <a href="${PROFILE.resume}" target="_blank" rel="noopener">click here</a>.`, "cyan");
       const a = document.createElement("a");
       a.href = PROFILE.resume;
       a.download = "";
       a.click();
     },
-    gui() {
-      println("switching to GUI view…", "muted");
-      setTimeout(() => setMode("gui"), 300);
+    exit() {
+      println(`switching to GUI view…`);
+      setTimeout(() => setMode("gui"), 1000);
     },
     clear() {
       outputEl().innerHTML = "";
@@ -369,7 +442,7 @@ const Terminal = (() => {
     if (booted) return;
     booted = true;
     printBlock([
-      { text: `Anirban Maitra — terminal portfolio v1.0`, cls: "heading" },
+      { text: `Anirban Maitra : terminal portfolio version 1.1`, cls: "heading" },
       { text: `type 'help' to see available commands.`, cls: "muted" },
       { text: "&nbsp;" },
     ]);
@@ -390,7 +463,7 @@ const Terminal = (() => {
       return;
     }
     if (lower.startsWith("sudo")) {
-      println("nice try. permission denied — this terminal runs as 'visitor'.", "error");
+      println("nice try. permission denied — this terminal runs as 'guest'.", "error");
       return;
     }
 
@@ -443,8 +516,40 @@ const Terminal = (() => {
     if (input) setTimeout(() => input.focus(), 50);
   }
 
-  return { bootOnce, focusInput, wireInput };
+  function removeBlinker() {
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalCaret = document.getElementById('terminalCaret');
+    const terminalOutput = document.getElementById('terminalOutput');
+
+    // 1. Hide the caret when typing begins
+    terminalInput.addEventListener('input', (e) => {
+      if (e.target.value.length > 0) {
+        terminalCaret.classList.add('is-typing');
+      } else {
+        terminalCaret.classList.remove('is-typing');
+      }
+    });
+
+    // 2. Restore the caret on Enter (Next Command)
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const command = e.target.value;
+        
+        // Reset the field for the next command
+        e.target.value = '';
+        
+        // Bring back the blinking caret instantly
+        terminalCaret.classList.remove('is-typing');
+      }
+    });
+
+  }
+
+  return { bootOnce, focusInput, wireInput, removeBlinker };
 })();
+
+
+
 
 /* ==========================================================================
    INIT
@@ -456,6 +561,7 @@ document.addEventListener("DOMContentLoaded", () => {
   wireContactForm();
   wireModeSwitch();
   Terminal.wireInput();
+  Terminal.removeBlinker();
   typeHeadline();
 
   let saved = null;
