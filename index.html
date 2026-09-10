@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anirban Maitra — Data Scientist / AI Engineer</title>
+<meta name="description" content="Portfolio of Anirban Maitra, Data Scientist and AI Engineer building LLM, RAG, and agentic AI systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230B0F10%22/><text x=%2250%25%22 y=%2258%25%22 font-size=%2260%22 fill=%22%23FFB020%22 text-anchor=%22middle%22 font-family=%22monospace%22>&gt;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-mode="gui">
+
+  <!-- ===================== MODE SWITCH (always visible, top-left) ===================== -->
+  <div class="mode-switch" role="tablist" aria-label="View mode">
+    <button class="mode-btn" data-target="gui" role="tab" aria-selected="true" id="btn-gui">GUI</button>
+    <button class="mode-btn" data-target="terminal" role="tab" aria-selected="false" id="btn-terminal">Terminal</button>
+    <span class="mode-switch-thumb" aria-hidden="true"></span>
+  </div>
+
+  <!-- ===================== GUI VIEW ===================== -->
+  <div id="gui-view" class="view view--gui">
+
+    <nav class="site-nav">
+      <a href="#about" class="site-nav__link">about</a>
+      <a href="#work" class="site-nav__link">work</a>
+      <a href="#skills" class="site-nav__link">skills</a>
+      <a href="#contact" class="site-nav__link">contact</a>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div class="hero__main">
+        <p class="hero__kicker">$ whoami</p>
+        <h1 class="hero__headline">
+          <span id="typeTarget"></span><span class="cursor" id="typeCursor">▌</span>
+        </h1>
+        <p class="hero__sub">Anirban Maitra — Data Scientist</p>
+      </div>
+
+      <aside class="status-card" id="statusCard">
+        <div class="window-chrome">
+          <span class="dot dot--a"></span><span class="dot dot--b"></span><span class="dot dot--c"></span>
+          <span class="window-chrome__title">status.log</span>
+        </div>
+        <dl class="status-card__body">
+          <div class="status-row"><dt>role</dt><dd>Data Scientist / AI Engineer</dd></div>
+          <div class="status-row"><dt>location</dt><dd>Raebareli, Uttar Pradesh, IN</dd></div>
+          <div class="status-row"><dt>availability</dt><dd><span class="pulse-dot"></span>open to opportunities</dd></div>
+          <div class="status-row"><dt>focus</dt><dd>LLMs · RAG · Agentic AI</dd></div>
+          <div class="status-row"><dt>contact</dt><dd><a href="mailto:maitraanirban25@gmail.com">maitraanirban25@gmail.com</a></dd></div>
+        </dl>
+      </aside>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <p class="section__label">$ about</p>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I finished my M.Tech in Artificial Intelligence at IIT Jodhpur in 2025, and I've spent the time since building the kind of systems that used to only live in research papers — agents that use tools, retrieval pipelines that actually cite their sources, models fine-tuned until they stop guessing.</p>
+          <p>At Turing, most of my work has sat at the intersection of data science and applied GenAI: designing evaluation frameworks for LLMs, authoring SFT datasets that measurably improved tool-use and multi-step reasoning on a 15B-parameter model, and building the internal tooling that made all of it repeatable rather than one-off.</p>
+          <p>What actually drives me is turning ambiguity into something testable. Most interesting ML problems aren't modeling problems — they're the fuzzy human ones underneath: what "correct" means here, how you measure it, how you get two teams to agree on it. I like working exactly there, between the whiteboard and the notebook, and shipping something that holds up.</p>
+        </div>
+        <div class="about-facts">
+          <div class="window-chrome">
+            <span class="dot dot--a"></span><span class="dot dot--b"></span><span class="dot dot--c"></span>
+            <span class="window-chrome__title">education.json</span>
+          </div>
+          <ul class="fact-list">
+            <li><span class="fact-list__label">M.Tech, Artificial Intelligence</span><span class="fact-list__meta">IIT Jodhpur · 2025</span></li>
+            <li><span class="fact-list__label">B.Tech, Computer Science &amp; Engineering</span><span class="fact-list__meta">Dr. A.P.J. Abdul Kalam Technical University · 2021</span></li>
+            <li><span class="fact-list__label">GATE CS/IT — 96.5 percentile</span><span class="fact-list__meta">2023</span></li>
+          </ul>
+          <div class="window-chrome window-chrome--tight">
+            <span class="dot dot--a"></span><span class="dot dot--b"></span><span class="dot dot--c"></span>
+            <span class="window-chrome__title">experience.json</span>
+          </div>
+          <ul class="fact-list">
+            <li><span class="fact-list__label">Data Scientist, Turing Global India</span><span class="fact-list__meta">Jun 2025 – Jul 2026</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="work">
+      <p class="section__label">$ ls ./projects</p>
+      <h2 class="section__heading">Featured work</h2>
+      <div class="project-grid" id="projectGrid"><!-- injected by app.js --></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <p class="section__label">$ cat skills.yaml</p>
+      <h2 class="section__heading">Skills &amp; expertise</h2>
+      <div class="skills-grid" id="skillsGrid"><!-- injected by app.js --></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <p class="section__label">$ contact --reach</p>
+      <h2 class="section__heading">Let's talk</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-lead">I'm currently open to full-time role in ML, GenAI, and data science. The fastest way to reach me is email. I read every message myself.</p>
+          <a class="contact-email" href="mailto:maitraanirban25@gmail.com">maitraanirban25@gmail.com</a>
+          <p class="contact-phone">+91 98397 06161</p>
+          <a class="btn btn--ghost" href="assets/Anirban_Maitra_Resume.pdf" download>Download Resume</a>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label class="field">
+            <span>Your name</span>
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label class="field">
+            <span>Your email</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn btn--solid">Send message</button>
+          <p class="field-note">Opens your email client with this message pre-filled and addressed to me.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__brand">
+        <span class="brand-mark">anirban@portfolio</span>
+        <span class="brand-tag">built with vanilla HTML, CSS &amp; JS — no framework</span>
+      </div>
+      <ul class="social-list">
+        <li><a href="https://github.com/MrBeast-Anirban" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/maitraanirban/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/AnirbanMaitra11" target="_blank" rel="noopener">X / Twitter</a></li>
+        <li><a href="mailto:maitraanirban25@gmail.com">Email</a></li>
+      </ul>
+      <p class="site-footer__meta">© <span id="year"></span> Anirban Maitra. Try the terminal in the top-left corner.</p>
+    </footer>
+  </div>
+
+  <!-- ===================== TERMINAL VIEW ===================== -->
+  <div id="terminal-view" class="view view--terminal" aria-hidden="true">
+    <div class="terminal" id="terminal">
+      <div class="terminal__output" id="terminalOutput"></div>
+      <div class="terminal__input-row">
+        <span class="terminal__prompt" id="terminalPromptLabel">visitor@anirban-maitra:~$</span>
+        <input type="text" id="terminalInput" class="terminal__input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command input">
+        <span class="terminal__caret" id="terminalCaret">▌</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
