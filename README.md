@@ -1,3 +1,5 @@
+# Portfolio
+
 A dual-mode portfolio site: a traditional GUI view and a fully interactive terminal
 view, toggled from the switch in the top-left corner.
 
