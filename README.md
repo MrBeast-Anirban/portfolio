@@ -9,8 +9,8 @@ view, toggled from the switch in the top-left corner.
 index.html        all markup for both views
 css/style.css      design system + styles
 js/app.js          shared content data, GUI rendering, terminal engine
-assets/            your résumé PDF (linked from the Contact section and the
-                   terminal's `resume` command)
+assets/            your resume PDF (linked from the Contact section and the
+                   terminal's 'resume' command)
 ```
 
 ## Running it
@@ -39,8 +39,8 @@ preview icons on each project card; feel free to add your own to the
 
 ## Terminal commands
 
-`help`, `about`, `experience`, `projects`, `skills`, `education`, `contact`,
-`social`, `resume`, `gui`, `clear`, `whoami`, `date`, `echo <text>` — plus a
+`help`, `about`, `experience`, `projects`, `oldprojects`, `skills`, `education`, `contact`,
+`social`, `resume`, `exit`, `clear`, `whoami`, `date`, `echo <text>` — plus a
 couple of easter eggs (`sudo <anything>`).
 
 ## Contact form
