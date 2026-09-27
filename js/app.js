@@ -228,7 +228,7 @@ function renderProjects() {
     </article>
   `).join("");
 
-  /* for old projects */
+  /* for other projects */
   grid2.innerHTML = OLDPROJECTS.map(p => `
     <article class="old-project-card">
       <div class="project-card__preview">${previewSVG(p.glyph)}</div>
@@ -334,18 +334,18 @@ const Terminal = (() => {
     help() {
       printBlock([
         { text: "available commands:", cls: "heading" },
-        { text: "  about        — who I am and how I work" },
-        { text: "  experience   — work history" },
-        { text: "  projects     — featured builds, with links" },
-        { text: "  oldprojects  — all old projects, with links" },
-        { text: "  skills       — technical skill inventory" },
-        { text: "  education    — degrees and scores" },
-        { text: "  contact      — how to reach me" },
-        { text: "  social       — GitHub, LinkedIn, X" },
-        { text: "  resume       — download resume (PDF)" },
-        { text: "  exit         — switch to the GUI view" },
-        { text: "  clear        — clear the screen" },
-        { text: "  whoami       — one line summary" },
+        { text: "  about          — who I am and how I work" },
+        { text: "  experience     — work history" },
+        { text: "  projects       — featured builds, with links" },
+        { text: "  otherprojects  — all other projects done in past, with links" },
+        { text: "  skills         — technical skill inventory" },
+        { text: "  education      — degrees and scores" },
+        { text: "  contact        — how to reach me" },
+        { text: "  social         — GitHub, LinkedIn, X" },
+        { text: "  resume         — download resume (PDF)" },
+        { text: "  exit           — switch to the GUI view" },
+        { text: "  clear          — clear the screen" },
+        { text: "  whoami         — one line summary" },
       ]);
     },
     whoami() {
