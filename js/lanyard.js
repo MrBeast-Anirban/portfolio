@@ -32,7 +32,7 @@
   const CARD = {
     name: "Anirban Maitra",
     role: "Data Scientist",
-    tagline: "ACCESS: GRANTED",
+    tagline: "NICE TO MEET YOU",
   };
   /*const PHOTO_CANDIDATES = ["assets/profile.jpg", "assets/profile.jpeg", "assets/profile.png"];*/
   const PHOTO_CANDIDATES = [
