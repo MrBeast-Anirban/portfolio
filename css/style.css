@@ -631,12 +631,13 @@ body[data-mode="terminal"] .lanyard { display: none; }
   /*.lanyard { display: none; }*/
   .lanyard {
     position: absolute;
-    left: 30%;
+    left: 50%;
     top: 10%;
+    transform: translateX(-50%);
     z-index: -1;
   }
   .view--gui {
-    top: 550px;
+    margin-top: 550px;
   }
 }
 
